@@ -9,21 +9,25 @@ const Button = ({text, handleClick}) => {
 
 const Statistic = ({text, value}) => {
   return(
-    <p>{text} {value}</p>
+    <tr>
+      <td>{text}</td><td>{value}</td>
+    </tr>
   )
 }
 
 const Statistics = ({good, neutral, bad}) => {
   let total = good + bad + neutral;
   return(
-    <section>
-      <Statistic text="good" value={good} />
-      <Statistic text="neutral" value={neutral} />
-      <Statistic text="bad" value={bad} />
-      <Statistic text="total" value={total} />
-      <Statistic text="average" value={(good - bad) / total} />
-      <Statistic text="positive" value={good / total * 100 + " %"} />
-    </section>
+    <table>
+      <tbody>
+        <Statistic text="good" value={good} />
+        <Statistic text="neutral" value={neutral} />
+        <Statistic text="bad" value={bad} />
+        <Statistic text="total" value={total} />
+        <Statistic text="average" value={(good - bad) / total} />
+        <Statistic text="positive" value={good / total * 100 + " %"} />
+      </tbody>
+    </table>
   )
 }
 
